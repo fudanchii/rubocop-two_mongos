@@ -1,3 +1,9 @@
 Naming/FileName:
  Exclude:
    - lib/rubocop-two_mongos.rb
+
+Metrics/MethodLength:
+  Max: 15
+
+Metrics/AbcSize:
+  Max: 20
