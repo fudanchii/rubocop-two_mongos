@@ -7,12 +7,6 @@ RSpec::Core::RakeTask.new(:spec)
 
 task default: :spec
 
-require 'rspec/core/rake_task'
-
-RSpec::Core::RakeTask.new(:spec) do |spec|
-  spec.pattern = FileList['spec/**/*_spec.rb']
-end
-
 desc 'Generate a new cop with a template'
 task :new_cop, [:cop] do |_task, args|
   require 'rubocop'
