@@ -27,6 +27,9 @@ require
 # already the default
 TwoMongos/ToMongoidDocument:
   Enabled: true
+
+TwoMongos/KeyToField:
+  Enabled: true
 ```
 
 ## Development
