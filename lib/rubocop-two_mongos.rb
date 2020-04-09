@@ -8,6 +8,5 @@ require_relative 'rubocop/two_mongos/inject'
 
 RuboCop::TwoMongos::Inject.defaults!
 
-require_relative 'rubocop/cop/two_mongos/token_utils'
 require_relative 'rubocop/cop/two_mongos/to_mongoid_document'
 require_relative 'rubocop/cop/two_mongos/key_to_field'
