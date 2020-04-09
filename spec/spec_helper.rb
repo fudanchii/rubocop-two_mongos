@@ -3,6 +3,8 @@
 require 'rubocop-two_mongos'
 require 'rubocop/rspec/support'
 
+require 'byebug'
+
 RSpec.configure do |config|
   config.include RuboCop::RSpec::ExpectOffense
 

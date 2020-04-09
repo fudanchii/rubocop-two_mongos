@@ -1,3 +1,7 @@
 # Write it!
+TwoMongos/KeyToField:
+  Enabled: true
+  VersionAdded: '0.82'
+
 TwoMongos/ToMongoidDocument:
   Enabled: true
