@@ -19,12 +19,10 @@ module RuboCop
       #   # good
       #   field :first_name, type: String
       class KeyToField < Cop
-        include RuboCop::Cop::TwoMongos::TokenUtils
-
-        MSG = 'Please use field syntax here.'
+        MSG = 'Use `field :column_name, type: ColumnType` syntax here.'
 
         def_node_matcher :key_declaration, <<~PATTERN
-          (send nil? :key (sym $_) (const $...))
+          (send nil? :key (sym _) (const ...))
         PATTERN
 
         def on_send(node)
@@ -32,10 +30,12 @@ module RuboCop
         end
 
         def autocorrect(node)
-          type_text = node.children[3].source
           lambda do |corrector|
             corrector.replace(node.loc.selector, 'field')
-            corrector.replace(field_type(node), "type: #{type_text}")
+            corrector.replace(
+              node.last_argument.source_range,
+              "type: #{node.children[3].source}"
+            )
           end
         end
       end

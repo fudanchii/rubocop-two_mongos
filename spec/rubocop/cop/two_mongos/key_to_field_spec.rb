@@ -6,7 +6,7 @@ RSpec.describe RuboCop::Cop::TwoMongos::KeyToField, :config do
   it 'registers an offense when using `key` syntax' do
     expect_offense(<<~RUBY)
       key :username, String
-      ^^^^^^^^^^^^^^^^^^^^^ Please use field syntax here.
+      ^^^^^^^^^^^^^^^^^^^^^ Use `field :column_name, type: ColumnType` syntax here.
     RUBY
   end
 
