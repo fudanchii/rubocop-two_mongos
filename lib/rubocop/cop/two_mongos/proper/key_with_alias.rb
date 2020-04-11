@@ -6,11 +6,13 @@ module RuboCop
       module Proper
         # Rule out all key statement with aliasing.
         # In Mongoid the arg for aliasing is inverted compared to
-        # Monomapper aliases. Avoid if possible.
+        # Mongomapper aliases. Avoid if possible.
         #
         # @example
         #   #bad
         #   key :username, String, alias: :uname
+        #   # in Mongoid this will looks like this:
+        #   # field :uname, type: String, as: :username
         #
         #   #good
         #   key :uname, String
