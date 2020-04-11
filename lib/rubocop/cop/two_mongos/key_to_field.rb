@@ -21,12 +21,12 @@ module RuboCop
       class KeyToField < Cop
         MSG = 'Use `field :column_name, type: ColumnType` syntax here.'
 
-        def_node_matcher :key_declaration, <<~PATTERN
+        def_node_matcher :match_key_declaration?, <<~PATTERN
           (send nil? :key (sym _) (const ...))
         PATTERN
 
         def on_send(node)
-          return add_offense(node) if key_declaration(node)
+          add_offense(node) if match_key_declaration?(node)
         end
 
         def autocorrect(node)
