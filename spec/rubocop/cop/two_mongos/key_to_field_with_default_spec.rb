@@ -6,7 +6,7 @@ RSpec.describe RuboCop::Cop::TwoMongos::KeyToFieldWithDefault, :config do
   it 'registers an offense when using `key` syntax' do
     expect_offense(<<~RUBY)
       key :username, String, default: 'anon123'
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Use `field :column_name, type: ColumnType` syntax here.
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Use `field :column_name, type: ColumnType, default: DefaultValue` syntax here.
     RUBY
   end
 
