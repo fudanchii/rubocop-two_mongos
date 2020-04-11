@@ -1,4 +1,4 @@
-# Rubocop::TwoMongos
+# Rubocop::TwoMongos [![Build Status](https://travis-ci.com/fudanchii/rubocop-two_mongos.svg?branch=master)](https://travis-ci.com/fudanchii/rubocop-two_mongos)
 
 Convert Mongomapper usage to its comparable Mongoid syntax.
 
