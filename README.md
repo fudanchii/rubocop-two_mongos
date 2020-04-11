@@ -18,6 +18,8 @@ And then execute:
 
 To be used as RuboCop extension.
 
+There are 2 kind of cops: `TwoMongos/Proper/*` and `TwoMongos/*`, the `Proper` cops were meant to catch _unproper_ usage of MongoMapper and will recommend the proper one if possible, this will make conversion to Mongoid more feasible.
+
 in your rubocop file:
 
 ```yaml
