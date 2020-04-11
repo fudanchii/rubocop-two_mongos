@@ -8,17 +8,13 @@ module RuboCop
       #
       # @example
       #   # bad
-      #   key :username
-      #
-      #   # good
-      #   field :username
-      #
-      #   # bad
       #   key :first_name, String
       #
       #   # good
       #   field :first_name, type: String
       class KeyToField < Cop
+        include RangeHelp
+
         MSG = 'Use `field :column_name, type: ColumnType` syntax here.'
 
         def_node_matcher :match_key_declaration?, <<~PATTERN
@@ -30,12 +26,10 @@ module RuboCop
         end
 
         def autocorrect(node)
+          replacement = "type: #{node.last_argument.source}"
           lambda do |corrector|
             corrector.replace(node.loc.selector, 'field')
-            corrector.replace(
-              node.last_argument.source_range,
-              "type: #{node.children[3].source}"
-            )
+            corrector.replace(node.arguments[1].source_range, replacement)
           end
         end
       end

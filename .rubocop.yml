@@ -3,7 +3,11 @@ Naming/FileName:
    - lib/rubocop-two_mongos.rb
 
 Metrics/MethodLength:
-  Max: 15
+  Max: 20
 
 Metrics/AbcSize:
   Max: 20
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*_spec.rb
