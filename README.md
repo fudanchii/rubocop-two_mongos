@@ -25,6 +25,7 @@ require
   - rubocop-two_mongos
 
 # already the default
+# see config/default.yml for all cops list
 TwoMongos/ToMongoidDocument:
   Enabled: true
 
